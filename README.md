@@ -20,6 +20,9 @@ Official implementation of ['Personalize Segment Anything Model with One Shot'](
 
 In this project, we propose a training-free **Per**sonalization approach for [Segment Anything Model (SAM)](https://ai.facebook.com/research/publications/segment-anything/), termed as **PerSAM**. Given only a single image with a reference mask, PerSAM can segment specific visual concepts, e.g., your pet dog, within other images or videos without any training. 
 For better performance, we further present an efficient one-shot fine-tuning variant, **PerSAM-F**. We freeze the entire SAM and introduce two learnable mask weights, which only trains **2 parameters** within **10 seconds**. 
+在这个项目中，我们提出了一种无需训练的个性化方法，用于Segment Anything Model (SAM) 的分割。这个方法被称为PerSAM。给定只有一张带有参考掩码的图像，PerSAM可以在其他图像或视频中分割特定的视觉概念，例如您的宠物狗，而无需进行任何训练。为了获得更好的性能，我们进一步提出了一种高效的单次微调变体，即PerSAM-F。我们冻结整个SAM，并引入两个可学习的掩码权重，仅在10秒内训练2个参数。
+
+
 
 <div align="center">
   <img src="figs/fig_persam.png"/ width="97%"> <br>
