@@ -29,6 +29,7 @@ For better performance, we further present an efficient one-shot fine-tuning var
 </div>
 
 Besides, our approach can be utilized to assist [DreamBooth](https://arxiv.org/pdf/2208.12242.pdf) in fine-tuning better [Stable Diffusion](https://github.com/CompVis/stable-diffusion) for personalized image synthesis. We adopt PerSAM to segment the target object in the user-provided few-shot images, which eliminates the **background disturbance** and benefits the target representation learning.
+此外，我们的方法可以用于辅助DreamBooth在个性化图像合成中进行更好的稳定扩散的微调。我们采用PerSAM来在用户提供的少样本图像中分割目标对象，从而消除了背景干扰，并有利于目标表示学习。
 
 <div align="center">
   <img src="figs/fig_db.png"/ width="97%"> <br>
