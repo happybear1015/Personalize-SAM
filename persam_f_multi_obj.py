@@ -25,7 +25,7 @@ def get_arguments():
     parser.add_argument('--ckpt', type=str, default='./sam_vit_h_4b8939.pth')
 
     parser.add_argument('--lr', type=int, default=1e-3)
-    parser.add_argument('--train_epoch_outside', type=int, default=1)
+    parser.add_argument('--train_epoch_outside', type=int, default=2)
     parser.add_argument('--train_epoch_inside', type=int, default=200)
     parser.add_argument('--log_epoch', type=int, default=200)
     parser.add_argument('--training_percentage', type=float, default=0.5)
@@ -67,7 +67,7 @@ def persam_f(args, obj_name, images_path, masks_path, output_path):
     for i in tqdm(range(args.train_epoch_outside)):
         output_path = os.path.join(output_path, obj_name)
         os.makedirs(output_path, exist_ok=True)
-        training_size = int(os.listdir(os.path.join(images_path, obj_name)))  * args.training_percentage)
+        training_size = int((len(os.listdir(os.path.join(images_path, obj_name))))  * args.training_percentage)
         for ref_idx in range(training_size):
             # Path preparation
             ref_image_path = os.path.join(images_path, obj_name, '{:02}.jpg'.format(ref_idx))
@@ -254,7 +254,7 @@ def persam_f(args, obj_name, images_path, masks_path, output_path):
         # Save masks
         
         plt.imshow(test_image_original)
-        vis_mask_output_path = os.path.join(output_path, f'vis_mask_{test_idx}_objects:{len(history_masks)}.jpg')
+        vis_mask_output_path = os.path.join(output_path, f'vis_mask_{test_idx}_objects{len(history_masks)}.jpg')
         with open(vis_mask_output_path, 'wb') as outfile:
             plt.savefig(outfile, format='jpg')
 
